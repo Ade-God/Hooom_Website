@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-slate-900 antialiased;
+}
+
+a {
+  @apply text-brand-teal transition-colors duration-200;
+}
+
+a:hover {
+  @apply text-brand-orange;
+}
+
+.gradient-surface {
+  position: relative;
+  isolation: isolate;
+}
+
+.gradient-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(15, 185, 177, 0.18), transparent 35%),
+    radial-gradient(circle at 80% 0%, rgba(0, 209, 209, 0.2), transparent 30%),
+    linear-gradient(120deg, rgba(15, 185, 177, 0.25), rgba(255, 122, 24, 0.14));
+  opacity: 0.8;
+  filter: blur(40px);
+  z-index: -1;
+}
+
+.section-shell {
+  @apply max-w-6xl mx-auto px-6 py-16 lg:py-20;
+}
+
+.card-surface {
+  @apply bg-white/70 backdrop-blur border border-slate-200 shadow-sm rounded-2xl;
+}
+
+.soft-shadow {
+  box-shadow: 0 20px 60px rgba(15, 185, 177, 0.1);
+}
+
+.glow-border {
+  position: relative;
+}
+
+.glow-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 1rem;
+  padding: 1px;
+  background: linear-gradient(120deg, rgba(15,185,177,0.5), rgba(255,122,24,0.4));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  @apply font-semibold text-slate-900;
+}
+
+.prose strong {
+  @apply text-slate-900;
+}
+
+.prose p {
+  @apply text-slate-700;
+}
