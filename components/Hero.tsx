@@ -20,7 +20,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-gray-800 leading-tight"
+            className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white leading-tight"
           >
             Build Better. Build Faster. Build With HoooM.
           </motion.h1>
@@ -47,7 +47,7 @@ export function Hero() {
             </Link>
             <Link
               href="/work"
-              className="rounded-full border border-slate-900 text-gray-600 px-6 py-3 text-sm font-semibold hover:bg-slate-900 hover:text-white"
+              className="rounded-full border border-gray-300 text-white px-6 py-3 text-sm font-semibold hover:bg-slate-900 hover:text-white"
             >
               View Work
             </Link>
