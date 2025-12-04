@@ -20,7 +20,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-gray-500 leading-tight"
+            className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-gray-800 leading-tight"
           >
             Build Better. Build Faster. Build With HoooM.
           </motion.h1>
@@ -28,7 +28,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-gray-500 max-w-2xl"
+            className="text-lg text-gray-800 max-w-2xl"
           >
             We design and engineer digital products, brands, and enterprise
             systems that help teams scale with confidence.

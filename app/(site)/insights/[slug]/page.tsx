@@ -11,7 +11,11 @@ export async function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+export function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Metadata {
   const post = blogPosts.find((item) => item.slug === params.slug);
   if (!post) return { title: "Insight not found" };
   return {
@@ -20,11 +24,19 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function InsightDetailPage({ params }: { params: { slug: string } }) {
+export default function InsightDetailPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const post = blogPosts.find((item) => item.slug === params.slug);
   if (!post) return notFound();
 
-  const related = blogPosts.filter((item) => item.slug !== post.slug && item.category === post.category).slice(0, 3);
+  const related = blogPosts
+    .filter(
+      (item) => item.slug !== post.slug && item.category === post.category
+    )
+    .slice(0, 3);
 
   return (
     <div className="section-shell space-y-10">
@@ -34,7 +46,8 @@ export default function InsightDetailPage({ params }: { params: { slug: string }
         description={post.metaDescription}
         actions={
           <p className="text-sm text-slate-600">
-            {new Date(post.publishedAt).toLocaleDateString()} • {post.readingTimeMinutes} min read
+            {new Date(post.publishedAt).toLocaleDateString()} •{" "}
+            {post.readingTimeMinutes} min read
           </p>
         }
       />
@@ -44,15 +57,23 @@ export default function InsightDetailPage({ params }: { params: { slug: string }
       </article>
 
       <div>
-        <h3 className="text-xl font-semibold text-slate-900">Related posts</h3>
+        <h3 className="text-xl font-semibold text-slate-600">Related posts</h3>
         <div className="mt-4 grid gap-4 md:grid-cols-3">
           {related.map((item) => (
-            <Link key={item.slug} href={`/insights/${item.slug}`} className="card-surface p-4 soft-shadow block hover:-translate-y-1 transition-transform">
-              <p className="text-xs uppercase tracking-[0.2em] text-brand-orange font-semibold">{item.category}</p>
-              <p className="mt-2 font-semibold text-slate-900">{item.title}</p>
+            <Link
+              key={item.slug}
+              href={`/insights/${item.slug}`}
+              className="card-surface p-4 soft-shadow block hover:-translate-y-1 transition-transform"
+            >
+              <p className="text-xs uppercase tracking-[0.2em] text-brand-orange font-semibold">
+                {item.category}
+              </p>
+              <p className="mt-2 font-semibold text-slate-600">{item.title}</p>
             </Link>
           ))}
-          {related.length === 0 && <p className="text-slate-600">More insights coming soon.</p>}
+          {related.length === 0 && (
+            <p className="text-slate-600">More insights coming soon.</p>
+          )}
         </div>
       </div>
 

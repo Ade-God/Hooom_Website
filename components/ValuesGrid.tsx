@@ -30,7 +30,10 @@ export function ValuesGrid() {
   return (
     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {values.map((value) => (
-        <div key={value.title} className="card-surface p-6 soft-shadow h-full">
+        <div
+          key={value.title}
+          className="pb-5 card-surface p-6 soft-shadow h-full"
+        >
           <p className="text-sm uppercase tracking-[0.2em] text-brand-orange font-semibold">
             {value.title}
           </p>
