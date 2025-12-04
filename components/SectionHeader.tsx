@@ -21,11 +21,11 @@ export function SectionHeader({
             {eyebrow}
           </p>
         )}
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-600">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
           {title}
         </h2>
         {description && (
-          <p className="mt-2 text-slate-600 max-w-2xl">{description}</p>
+          <p className="mt-2 text-slate-800 max-w-2xl">{description}</p>
         )}
       </div>
       {actions && <div className="flex-shrink-0">{actions}</div>}

@@ -15,7 +15,7 @@ export function ProjectCard({ project }: Props) {
       transition={{ type: "spring", stiffness: 240, damping: 18 }}
     >
       <div className="flex items-center justify-between gap-2">
-        <p className="text-xs uppercase tracking-[0.2em] text-brand-orange">
+        <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-orange">
           {project.industry}
         </p>
         <span className="text-xs text-slate-500">
@@ -25,12 +25,12 @@ export function ProjectCard({ project }: Props) {
       <h3 className="mt-3 text-xl font-semibold text-slate-900">
         {project.name}
       </h3>
-      <p className="mt-2 text-slate-600 flex-1">{project.shortDescription}</p>
+      <p className="mt-2 text-slate-800 flex-1">{project.shortDescription}</p>
       <div className="mt-4 flex flex-wrap gap-2">
         {project.servicesProvided.map((service) => (
           <span
             key={service}
-            className="rounded-full bg-slate-100 text-slate-700 px-3 py-1 text-xs font-semibold"
+            className="rounded-full bg-slate-100 text-slate-800 px-3 py-1 text-xs font-semibold"
           >
             {service}
           </span>

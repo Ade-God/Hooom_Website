@@ -16,7 +16,7 @@ export function ServiceCard({ service, compact }: Props) {
       className="card-surface p-6 soft-shadow h-full flex flex-col"
     >
       <div className="flex items-center justify-between gap-8">
-        <h3 className="md:text-lg text-sm max-w-40 font-semibold p-1.5 rounded-md bg-gray-800  text-gray-100">
+        <h3 className="md:text-sm text-sm max-w-30 font-semibold p-1.5 rounded-md bg-gray-800  text-gray-100">
           {service.name}
         </h3>
         <span className="text-xs uppercase tracking-[0.2em] font-bold text-brand-orange">
